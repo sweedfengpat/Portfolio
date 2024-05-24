@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "../assets/font/style.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,18 +17,204 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* config default font size */
+html {
+  font-size: 16px;
+  line-height: 20px;
+  /* tracking 2% */
+  letter-spacing: 0.02em;
+
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+  }
+
+  h5 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  h6 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+  }
 }
 
+
+
 @layer utilities {
+
+  /* entrance animetion */
+@keyframes enter-animetion {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .image-animation {
+    animation: enter-animation 0.8s 1;
+  }
+}
+
+
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+  }
+
+  .hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-display {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-outline {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: white;
+    -webkit-text-stroke: 1.5px black;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .text-display-M {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-outline-M {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    -webkit-text-stroke: 1px var(--foreground);
+  }
+
+  .text-subhead {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-p1 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .text-p2 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .text-p3 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .text-button {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .text-button2 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .text-underlined {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+  }
+
+  .text-h1 {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h2 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h3 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h4 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h5 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h6 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
   }
 }
