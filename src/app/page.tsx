@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 const AboutMe = dynamic(() => import('@/components/aboutMe'))
 const MySkill = dynamic(() => import('@/components/mySkill'))
-const Project = dynamic(() => import('@/components/project'))
+const Experience = dynamic(() => import('@/components/experience'))
 
 
 export default function Home() {
@@ -18,9 +18,8 @@ export default function Home() {
         <MySkill />
       </div>
       <div className="min-h-screen  p-24 bg-black w-full">
-        <Project />
+        <Experience />
       </div>
-
     </main>
   );
 }

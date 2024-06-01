@@ -146,29 +146,27 @@ export default function AboutMe() {
                 <div className="flex gap-6 w-fit translate-x-[14rem]">
                     <div className=" outline w-fit h-fit rounded-md social">
                         <Buttons className="">
-                            <Image className="" src="/icon/facebook.svg" alt="facebook" width={24} height={12} />
+                            <Image className="w-[24px] h-auto" src="/icon/facebook.svg" alt="facebook" width={0} height={0} />
                         </Buttons>
                     </div>
                     <div className=" outline w-fit rounded-md social">
                         <Buttons className="">
-                            <Image className="" src="/icon/linkedin.svg" alt="facebook" width={24} height={12} />
+                            <Image className="w-[24px] h-auto" src="/icon/linkedin.svg" alt="facebook" width={0} height={0} />
                         </Buttons>
                     </div>
                     <div className=" outline w-fit rounded-md social">
                         <Buttons className="">
-                            <Image className="" src="/icon/line.svg" alt="facebook" width={24} height={12} />
+                            <Image className="w-[24px] h-auto" src="/icon/line.svg" alt="facebook" width={0} height={0} />
                         </Buttons>
                     </div>
                     <div className=" outline w-fit rounded-md social">
                         <Buttons className="">
-                            <Image className="" src="/icon/gmail.svg" alt="facebook" width={24} height={0} />
+                            <Image className="w-[24px] h-auto" src="/icon/gmail.svg" alt="facebook" width={0} height={0} />
                         </Buttons>
                     </div>
                 </div>
             </div>
-            <Image className="image" src="/boys.svg" alt="boy" width={800} height={12} />
-
-
+            <Image className="image w-[800px] h-auto" src="/boys.svg" alt="boy" width={0} height={0} />
         </div>
     )
 

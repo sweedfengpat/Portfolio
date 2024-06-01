@@ -44,20 +44,14 @@ export default function mySkill() {
 
             ScrollTrigger.create({
                 trigger: ".skill",
-                start: "center 70%",
+                start: "center 10%",
                 onEnter: () => {
                     anime.play();
                     animeto.play();
-                }
+                },
             });
 
-            ScrollTrigger.create({
-                trigger: ".skill",
-                onLeaveBack: () => {
-                    anime.pause(0)
-                    animeto.pause(0)
-                }
-            })
+
         });
 
         gsap.from(".title", {
@@ -183,7 +177,7 @@ export default function mySkill() {
             <div className="outline rounded-md skill" key={index}>
                 <Buttons className="" >
                     <div className='flex flex-col gap-6 items-center w-36 h-36 justify-center'>
-                        <Image className="" src={"/skill/" + skill.icon + ".svg"} alt="facebook" width={42} height={0} />
+                        <Image className="w-[42px] h-auto" src={"/skill/" + skill.icon + ".svg"} alt="facebook" width={0} height={0} />
                         <span className='text-h5 font-bold text-center text-black'>{skill.name}</span>
                     </div>
                 </Buttons>

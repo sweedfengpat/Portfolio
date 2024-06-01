@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Header() {
     return (
         <>
-            <header className="flex items-center justify-between w-full py-4 px-20 bg-red-200  text-black sticky">
+            <header className="flex items-center justify-between w-full py-4 px-20 bg-gray-100 rounded-b-lg text-black sticky">
                 <div className="flex gap-2 items-center">
                     <Image
                         className="relative drop-shadow-lg"
@@ -33,11 +33,11 @@ export default function Header() {
                     <button className="bg-black text-white px-5 py-4 rounded-md text-button flex gap-2 justify-center items-center hover:invert hover:shadow-[0px_0px_0px_2px_rgba(255,255,255,0.7)_inset] duration-500">
                         <span>Resume</span>
                         <Image
-                            className="relative drop-shadow-lg invert"
+                            className="relative drop-shadow-lg invert w-[20px] h-auto"
                             src="/icon/download.svg"
                             alt="Next.js Logo"
-                            width={20}
-                            height={12}
+                            width={0}
+                            height={0}
                             priority
                         />
                     </button>
