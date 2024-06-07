@@ -4,122 +4,22 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import Buttons from "../common/buttonOutline";
-import {useGSAP } from "@gsap/react"
+import { useGSAP } from "@gsap/react"
+import { applyAnimations } from "./gsapAnimations";
 
 export default function AboutMe() {
 
     const containers = useRef(null);
 
     useGSAP(() => {
-
-        gsap.from(".image", {
-            duration: 2,
-            opacity: 0,
-            y: 0,
-            x: 150,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-        gsap.to(".image", {
-            duration: 2,
-            opacity: 1,
-            y: 0,
-            x: -100,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.from(".text-display", {
-            duration: 2,
-            opacity: 0,
-            x: -150,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.to(".text-display", {
-            duration: 2,
-            opacity: 1,
-            x: 0,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.from(".text-outline", {
-            duration: 2,
-            opacity: 0,
-            x: -150,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.to(".text-outline", {
-            duration: 2,
-            opacity: 1,
-            x: 0,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.from(".social", {
-            duration: 2,
-            opacity: 0,
-            x: -150,
-            y: 150,
-            stagger: 0.3,
-            ease: "expo.inOut",
-        });
-
-        gsap.to(".social", {
-            duration: 2,
-            opacity: 1,
-            x: 0,
-            y: 0,
-            stagger: 0.3,
-            ease: "expo.inOut",
-        });
-
-        gsap.from(".banner", {
-            duration: 1,
-            opacity: 0,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.to(".banner", {
-            duration: 1,
-            opacity: 1,
-            stagger: 0.2,
-            ease: "expo.inOut",
-        });
-
-        gsap.from(".fadeout", {
-            duration: 3,
-            opacity: 0,
-            y: 150,
-            stagger: 0.3,
-            ease: "expo.inOut",
-        });
-
-        gsap.to(".fadeout", {
-            duration: 3,
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            ease: "expo.inOut",
-        });
-
-
-        
-  
-
-      },
-      { scope: containers }
+        applyAnimations(containers);
+    },
+        { scope: containers }
     );
 
 
     return (
-        <div className="flex justify-between gap-8 containers " ref={containers}>
+        <div className="flex justify-between gap-8 containers flex-col-reverse items-center xl:flex-row" ref={containers}>
             <div className="w-full flex flex-col justify-between translate-x-12 " >
                 <div></div>
                 <div className="  p-4 rounded-lg banner">
@@ -137,9 +37,9 @@ export default function AboutMe() {
                     </div>
                     <div className="mt-8">
                         <span className="text-p2 text-zinc-500 fadeout">{"I'm a Full Stack Developer with a passion for creating innovative solutions."}</span>
-                        <br/>
+                        <br />
                         <span className="text-p2 text-zinc-500 fadeout">{"I'm a Full Stack Developer with a passion for creating innovative solutions."}</span>
-                        <br/>
+                        <br />
                         <span className="text-p2 text-zinc-500 fadeout">{"I'm a Full Stack Developer with a passion for creating innovative solutions."}</span>
                     </div>
                 </div>
@@ -166,7 +66,10 @@ export default function AboutMe() {
                     </div>
                 </div>
             </div>
-            <Image className="image w-[800px] h-auto" src="/boys.svg" alt="boy" width={0} height={0} />
+
+            <Image className="image w-[800px] h-auto translate-x-24 lg:translate-x-0" src="/boys.svg" alt="boy" width={0} height={0} />
+
+
         </div>
     )
 

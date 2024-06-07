@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { applyAnimations } from "./gsapAnimations";
 
 type Skill = {
     name: string;
@@ -19,89 +20,8 @@ export default function mySkill() {
     const myskills = useRef(null);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useGSAP(() => {
-
-        const skillanime = gsap.utils.toArray(".skill");
-
-        skillanime.forEach((skill) => {
-
-
-            const anime = gsap.from(".skill", {
-                duration: 1,
-                opacity: 0,
-                y: 0,
-                x: 250,
-                stagger: 0.07,
-                ease: "expo.inOut",
-            });
-            const animeto = gsap.to(".skill", {
-                duration: 1,
-                opacity: 1,
-                y: 0,
-                x: 0,
-                stagger: 0.07,
-                ease: "expo.inOut"
-            });
-
-            ScrollTrigger.create({
-                trigger: ".skill",
-                start: "center 10%",
-                onEnter: () => {
-                    anime.play();
-                    animeto.play();
-                },
-            });
-
-
-        });
-
-        gsap.from(".title", {
-            duration: 1,
-            opacity: 0,
-            y: 0,
-            x: 150,
-            stagger: 0.2,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ".title",
-            }
-        });
-
-        gsap.to(".title", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            x: 0,
-            stagger: 0.2,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ".title",
-            }
-        });
-
-
-        // gsap.from(".skill", {
-        //     duration: 2,
-        //     opacity: 0,
-        //     y: 0,
-        //     x: 250,
-        //     stagger: 0.2,
-        //     ease: "expo.inOut",
-        // });
-        // gsap.to(".skill", {
-        //     duration: 2,
-        //     opacity: 1,
-        //     y: 0,
-        //     x: 0,
-        //     stagger: 0.2,
-        //     ease: "expo.inOut",
-        //     scrollTrigger: {
-        //         trigger: ".skill",
-        //         start: "center 70%",
-        //         scrub: true,
-        //     }
-        // }
-
-        // );
+        applyAnimations(myskills)
+        
     }, { scope: myskills });
 
 
@@ -198,7 +118,7 @@ export default function mySkill() {
                 <span className='text-display title'>My </span>
                 <span className='text-display font-extrabold title'>Skills</span>
             </div>
-            <div className='grid grid-cols-5 mt-12 justify-center items-center gap-12'>
+            <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-12 justify-center items-center gap-12'>
                 {renderSkill}
             </div>
         </div>

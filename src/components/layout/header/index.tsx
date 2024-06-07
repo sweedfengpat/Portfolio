@@ -20,7 +20,7 @@ export default function Header() {
                         <span className="font-bold text-h5">Portfolio</span>
                     </p>
                 </div>
-                <div>
+                <div className="hidden lg:block">
                     <ul className=" font-semibold flex justify-between gap-12 text-h5">
                         <li className="inline-block cursor-pointer hover-underline-animation">About me</li>
                         <li className="inline-block cursor-pointer  hover-underline-animation">Skills</li>
