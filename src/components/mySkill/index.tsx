@@ -96,7 +96,7 @@ export default function mySkill() {
         return (
             <div className="outline rounded-md skill" key={index}>
                 <Buttons className="" >
-                    <div className='flex flex-col gap-6 items-center w-36 h-36 justify-center'>
+                    <div className='flex flex-col gap-6 items-center w-24 h-24 md:w-36 md:h-36 justify-center'>
                         <Image className="w-[42px] h-auto" src={"/skill/" + skill.icon + ".svg"} alt="facebook" width={0} height={0} />
                         <span className='text-h5 font-bold text-center text-black'>{skill.name}</span>
                     </div>
@@ -118,7 +118,7 @@ export default function mySkill() {
                 <span className='text-display title'>My </span>
                 <span className='text-display font-extrabold title'>Skills</span>
             </div>
-            <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-12 justify-center items-center gap-12'>
+            <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 mt-12 justify-center items-center gap-12'>
                 {renderSkill}
             </div>
         </div>

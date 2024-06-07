@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SpeedInsights />
         <div className=" relative ">
-          <div className=" sticky top-0 z-[999]">
+          <div className=" sticky top-0 z-[999] w-full">
             <Header />
           </div>
           {children}

@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Header() {
     return (
         <>
-            <header className="flex items-center justify-between w-full py-4 px-20 bg-gray-100 rounded-b-lg text-black sticky">
+            <header className="flex items-center justify-between w-full py-4 px-6 xl:px-20 bg-gray-100 rounded-b-lg text-black sticky">
                 <div className="flex gap-2 items-center">
                     <Image
                         className="relative drop-shadow-lg"

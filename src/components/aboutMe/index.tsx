@@ -20,14 +20,14 @@ export default function AboutMe() {
 
     return (
         <div className="flex justify-between gap-8 containers flex-col-reverse items-center xl:flex-row" ref={containers}>
-            <div className="w-full flex flex-col justify-between translate-x-12 " >
+            <div className="w-full flex flex-col justify-between lg:translate-x-12 gap-4" >
                 <div></div>
-                <div className="  p-4 rounded-lg banner">
-                    <div className="flex gap-4">
-                        <span className="text-display whitespace-nowrap">{"Hello I'm"}</span>
-                        <span className="text-display font-extrabold  whitespace-nowrap">{"Patarapong Charoenpol."}</span>
+                <div className="  lg:p-4 rounded-lg banner">
+                    <div className="flex gap-4 flex-col lg:flex-row">
+                        <span className="text-display lg:whitespace-nowrap">{"Hello I'm"}</span>
+                        <span className="text-display font-extrabold  lg:whitespace-nowrap">{"Patarapong Charoenpol."}</span>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 flex-col lg:flex-row">
                         <span className=" text-display font-extrabold hover-underline-animation">{"Full Stack"}</span>
                         <span className=" text-outline font-extrabold">{"Developer"}</span>
                     </div>
@@ -43,7 +43,7 @@ export default function AboutMe() {
                         <span className="text-p2 text-zinc-500 fadeout">{"I'm a Full Stack Developer with a passion for creating innovative solutions."}</span>
                     </div>
                 </div>
-                <div className="flex gap-6 w-fit translate-x-[14rem]">
+                <div className="flex gap-6 w-fit lg:translate-x-[14rem]">
                     <div className=" outline w-fit h-fit rounded-md social">
                         <Buttons className="">
                             <Image className="w-[24px] h-auto" src="/icon/facebook.svg" alt="facebook" width={0} height={0} />
@@ -66,9 +66,12 @@ export default function AboutMe() {
                     </div>
                 </div>
             </div>
+            <div className="">
+            <Image className="image xl:!w-[700px] lg:!w-[500px] !w-[400px] h-auto ml-44 lg:ml-0 " src="/boys.svg" alt="boy" width={0} height={0} />
 
-            <Image className="image w-[800px] h-auto translate-x-24 lg:translate-x-0" src="/boys.svg" alt="boy" width={0} height={0} />
+            </div>
 
+            
 
         </div>
     )
