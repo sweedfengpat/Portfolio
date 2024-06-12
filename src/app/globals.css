@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "../assets/font/style.css";
+@import "./animate.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;

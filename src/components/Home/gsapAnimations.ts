@@ -5,19 +5,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export const applyAnimations = (containers: React.MutableRefObject<any>) => {
-  gsap.from(".image2", {
+  gsap.from(".image", {
     duration: 2,
     opacity: 0,
     y: 0,
-    x: 0,
+    x: 150,
     stagger: 0.2,
     ease: "expo.inOut",
   });
-  gsap.to(".image2", {
+  gsap.to(".image", {
     duration: 2,
     opacity: 1,
-    y: 20,
-    x: 100,
+    y: 0,
+    x: -100,
     stagger: 0.2,
     ease: "expo.inOut",
   });
@@ -33,7 +33,7 @@ export const applyAnimations = (containers: React.MutableRefObject<any>) => {
   gsap.to(".text-display", {
     duration: 2,
     opacity: 1,
-    x: 100,
+    x: 0,
     stagger: 0.2,
     ease: "expo.inOut",
   });
