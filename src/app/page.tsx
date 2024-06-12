@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 const HomePage = dynamic(() => import('@/components/Home'))
 const MySkill = dynamic(() => import('@/components/mySkill'))
 const Experience = dynamic(() => import('@/components/experience'))
-const AboutMe = dynamic(() => import('@/components/aboutme'))
+const AboutMe = dynamic(() => import('@/components/aboutMe'))
 
 
 export default function Home() {
