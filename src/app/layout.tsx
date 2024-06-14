@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "../components/layout/header";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { RefObject, useRef } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import HomePage from "./page";
 import {useRouter} from "next/router"
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,12 @@ export default function RootLayout({
 }>) {
 
   // const router = useRouter();
-
+  const [isHome, setIsHome] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.pathname === "/") {
+      setIsHome(true);
+    }
+  }, []);
 
   const ScrollDownRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +55,7 @@ export default function RootLayout({
   };
 
   const RenderChildrenOrPage = () => {
-    if (window.location.pathname === "/") {
+    if (isHome) {
       return <HomePage ScrollDownRef={ScrollDownRef}   />;
     } else {
       return children;
