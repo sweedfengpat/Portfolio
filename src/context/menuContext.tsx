@@ -1,26 +1,30 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, ReactNode } from 'react';
 
-export interface MenuContextInterface {
-  menu: number;
-  setMenu: (menu: number) => void;
+interface MenuContextProps {
+  menuState: number;
+  setMenuState: (state: number) => void;
 }
-// Create the context
-const MenuContext = createContext<MenuContextInterface>({} as MenuContextInterface);
 
+const MenuContext = createContext<MenuContextProps | undefined>(undefined);
 
+interface MenuProviderProps {
+  children: ReactNode;
+}
 
-// Create a provider component
-import { ReactNode } from 'react';
-
-export const MenuProvider = ({ children }: { children: ReactNode }) => {
-  const [menu, setMenu] = useState(0);
+export const MenuProvider = ({ children }: MenuProviderProps) => {
+  const [menuState, setMenuState] = useState<number>(0);
 
   return (
-    <MenuContext.Provider value={{ menu, setMenu }}>
+    <MenuContext.Provider value={{ menuState, setMenuState }}>
       {children}
     </MenuContext.Provider>
   );
 };
 
-
-export const useMenu = () => useContext(MenuContext);
+export const useMenu = (): MenuContextProps => {
+  const context = useContext(MenuContext);
+  if (!context) {
+    throw new Error('useMenu must be used within a MenuProvider');
+  }
+  return context;
+};

@@ -40,16 +40,15 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/icons/favicon.ico" sizes="14" />
       </Head>
       <body className={inter.className}>
-        <SpeedInsights />
-        <div className=" relative ">
-          <div className=" sticky top-0 z-[999] w-full">
-            <Header />
-          </div>
-          <MenuProvider>
+        <MenuProvider>
+          <SpeedInsights />
+          <div className=" relative ">
+            <div className=" sticky top-0 z-[999] w-full">
+              <Header />
+            </div>
             {children}
-          </MenuProvider>
-        </div>
-
+          </div>
+        </MenuProvider>
       </body>
     </html>
   );

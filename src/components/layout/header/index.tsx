@@ -5,7 +5,7 @@ import {useMenu} from "../../../context/menuContext"
 
 export default function Header() {
 
-    const {menu , setMenu} = useMenu();
+    const { menuState, setMenuState } = useMenu();
     return (
         <>
             <header className="flex items-center justify-between w-full py-4 px-6 xl:px-20 bg-gray-100 rounded-b-lg text-black sticky">
@@ -25,22 +25,22 @@ export default function Header() {
                 <div className="hidden lg:block">
                     <ul className=" font-semibold flex justify-between gap-12 text-h5">
                         <li className="inline-block cursor-pointer hover-underline-animation"
-                            onClick={() =>setMenu(0)}
+                            onClick={() =>setMenuState(0)}
                         >Home</li>
                         <li className="inline-block cursor-pointer  hover-underline-animation"
-                            onClick={() => setMenu(1)}
+                            onClick={() => setMenuState(1)}
                         >Skills</li>
                         <li className="inline-block cursor-pointer  hover-underline-animation"
-                            onClick={() => setMenu(2)}
+                            onClick={() => setMenuState(2)}
                         >My Experience</li>
                         <li className="inline-block cursor-pointer  hover-underline-animation"
-                            onClick={() => setMenu(3)}
+                            onClick={() => setMenuState(3)}
                         >About me</li>
                         <li className="inline-block cursor-pointer  hover-underline-animation"
-                            onClick={() => setMenu(4)}
+                            onClick={() => setMenuState(4)}
                         >Projects </li>
                         <li className="inline-block cursor-pointer  hover-underline-animation"
-                            onClick={() => setMenu(5)}
+                            onClick={() => setMenuState(5)}
                         >Contact me</li>
                     </ul>
                 </div>

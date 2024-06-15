@@ -11,20 +11,20 @@ const AboutMe = dynamic(() => import('@/components/aboutMe'))
 
 export default function Home() {
 
-const {menu} = useMenu();
+const {menuState} = useMenu();
 const ScrollDownRef = useRef<HTMLDivElement | null>(null);
 
 useEffect(() => {
   const container = ScrollDownRef.current;
   if (container) {
-    const item = container.children[menu] as HTMLElement;
+    const item = container.children[menuState] as HTMLElement;
     window.scrollTo({
       top: item.offsetTop,
       behavior: 'smooth',
     });
   }
 }
-, [menu]);
+, [menuState]);
 
   return (
     <>
