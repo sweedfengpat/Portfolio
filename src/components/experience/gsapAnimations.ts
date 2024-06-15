@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 
-export const applyAnimations = (myskills: React.MutableRefObject<any>) => {
+export const applyAnimations = () => {
     gsap.from(".title", {
         duration: 1,
         opacity: 0,

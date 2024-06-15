@@ -23,7 +23,7 @@ export default function myProject() {
     const experience = useRef(null);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useGSAP(() => {
-        applyAnimations(experience)
+        applyAnimations()
 
 
     }, { scope: experience });

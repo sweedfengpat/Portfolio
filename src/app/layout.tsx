@@ -7,9 +7,9 @@ import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { RefObject, useEffect, useRef, useState } from "react";
 import HomePage from "./page";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 const inter = Inter({ subsets: ["latin"] });
-
+import { MenuProvider } from '../context/menuContext';
 
 
 // export const metadata: Metadata = {
@@ -30,41 +30,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  // const router = useRouter();
-  const [isHome, setIsHome] = useState(false);
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.pathname === "/") {
-      setIsHome(true);
-    }
-  }, []);
-
-  const ScrollDownRef = useRef<HTMLDivElement>(null);
-
-  const scrollToItem = (index: number) => {
-    const container = ScrollDownRef.current;
-    if (container) {
-      const item = container.children[index] as HTMLElement;
-      console.log(item.offsetTop);
-      window.scrollTo({
-        top: item.offsetTop,
-        behavior: 'smooth',
-
-      });
-
-    }
-  };
-
-  const RenderChildrenOrPage = () => {
-    if (isHome) {
-      return <HomePage ScrollDownRef={ScrollDownRef}   />;
-    } else {
-      return children;
-    }
-  }
-
-
-
-  
   return (
     <html lang="en">
       <Head>
@@ -78,9 +43,11 @@ export default function RootLayout({
         <SpeedInsights />
         <div className=" relative ">
           <div className=" sticky top-0 z-[999] w-full">
-            <Header scrollToItem= {scrollToItem}/>
+            <Header />
           </div>
-          {RenderChildrenOrPage()}
+          <MenuProvider>
+            {children}
+          </MenuProvider>
         </div>
 
       </body>
